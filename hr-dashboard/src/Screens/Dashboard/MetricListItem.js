@@ -25,8 +25,7 @@ const styles = {
 };
 
 function MetricListItem(props) {
-  const { classes } = props;
-  const bull = <span className={classes.bullet}>•</span>;
+  const { classes, metric } = props;
 
   return (
     <Card className={classes.card}>
@@ -36,27 +35,19 @@ function MetricListItem(props) {
           color="textSecondary"
           gutterBottom
         >
-          Word of the Day
+          Overview Metric
         </Typography>
         <Typography variant="h5" component="h2">
-          be
-          {bull}
-          nev
-          {bull}o{bull}
-          lent
+          {metric.type}
         </Typography>
         <Typography className={classes.pos} color="textSecondary">
-          adjective
+          {metric.timeFrame} report
         </Typography>
-        <Typography component="p">
-          well meaning and kindly.
-          <br />
-          {'"a benevolent smile"'}
+        <Typography component="p">Year: {metric.year}</Typography>
+        <Typography variant="h5" component="h2">
+          {metric.value}
         </Typography>
       </CardContent>
-      <CardActions>
-        <Button size="small">Learn More</Button>
-      </CardActions>
     </Card>
   );
 }
